@@ -27,8 +27,9 @@ env/
 Thumbs.db
 Desktop.ini
 
-# Temporary files
+# Temporary files and review packages
 *.tmp
 *.temp
 *.log
 ~$*
+adult-income-model-evaluation-v2-review.zip
