@@ -1,0 +1,159 @@
+{
+  "dataset": {
+    "fonte_carregamento": "csv_local_canonico",
+    "caminho_relativo": "data/adult_openml_1590_v2.csv",
+    "tamanho_bytes": 5271056,
+    "sha256": "8f970e20c9991979ec0a9ccb65ce97543d678709a2c6f8ef23f7fb32f40adddc",
+    "hash_verificado": true,
+    "dataset_oficial_openml_1590": true,
+    "linhas": 48842,
+    "features": 14,
+    "target": "class"
+  },
+  "modelo_selecionado": "Logistic Regression (max_iter=1000)",
+  "criterio_selecao": {
+    "modelo_selecionado": "Logistic Regression (max_iter=1000)",
+    "criterio_primario": "Maior val_f1_mean na validacao cruzada (classe positiva >50K)",
+    "criterio_desempate": "Maior val_recall_mean, seguido por menor gap_train_val_accuracy",
+    "limite_overfitting_accuracy": 0.05,
+    "baseline_val_f1": 0.0,
+    "baseline_val_recall": 0.0,
+    "conjunto_usado_na_selecao": "Apenas X_train/y_train via validacao cruzada 5-fold (X_test nao consultado)"
+  },
+  "metricas_teste": {
+    "total_registros": 9769,
+    "positivos_reais": 2338,
+    "negativos_reais": 7431,
+    "positivos_previstos": 1856,
+    "negativos_previstos": 7913,
+    "accuracy": 0.8523902139420616,
+    "recall": 0.5885372112917023,
+    "precision": 0.7413793103448276,
+    "f1": 0.6561754887935145,
+    "fpr": 0.06459426725878079,
+    "selection_rate": 0.1899887398914935,
+    "matriz_confusao": {
+      "tn": 6951,
+      "fp": 480,
+      "fn": 962,
+      "tp": 1376
+    },
+    "denominadores_zero": {
+      "precision_indefinida": false,
+      "recall_indefinido": false,
+      "f1_indefinido": false,
+      "fpr_indefinido": false
+    },
+    "classification_report": {
+      "<=50K": {
+        "precision": 0.878427903450019,
+        "recall": 0.9354057327412192,
+        "f1-score": 0.906021897810219,
+        "support": 7431.0
+      },
+      ">50K": {
+        "precision": 0.7413793103448276,
+        "recall": 0.5885372112917023,
+        "f1-score": 0.6561754887935145,
+        "support": 2338.0
+      },
+      "accuracy": 0.8523902139420616,
+      "macro avg": {
+        "precision": 0.8099036068974232,
+        "recall": 0.7619714720164608,
+        "f1-score": 0.7810986933018668,
+        "support": 9769.0
+      },
+      "weighted avg": {
+        "precision": 0.8456282708694133,
+        "recall": 0.8523902139420616,
+        "f1-score": 0.8462265344894027,
+        "support": 9769.0
+      }
+    }
+  },
+  "fairness_resumo_teste": {
+    "sex": {
+      "atributo": "sex",
+      "total_registros": 9769,
+      "qtd_grupos": 2,
+      "equal_opportunity_difference": 0.09651434712490026,
+      "equal_opportunity_escopo": "integral_todos_os_grupos",
+      "equalized_odds_difference": 0.09651434712490026,
+      "equalized_odds_escopo": "integral_todos_os_grupos",
+      "avaliacao_fairness_parcial": false,
+      "accuracy_diff": 0.1100758905151703,
+      "recall_diff": 0.09651434712490026,
+      "fpr_diff": 0.06968725778612696,
+      "selection_rate_diff": 0.17136809845735007,
+      "accuracy_ratio": 0.8810946877066821,
+      "recall_ratio": 0.8400596276060958,
+      "fpr_ratio": 0.24064341455645802,
+      "selection_rate_ratio": 0.3066461647250784,
+      "possui_denominadores_zero": false,
+      "grupos_recall_indefinido": [],
+      "grupos_fpr_indefinido": [],
+      "grupos_excluidos_equalized_odds": [],
+      "grupos_amostra_pequena": [],
+      "nota_denominadores_zero": "Todos os grupos possuem positivos e negativos reais > 0 (comparacao integral).",
+      "metricas_globais": {
+        "accuracy": 0.8523902139420616,
+        "recall": 0.5885372112917023,
+        "fpr": 0.06459426725878079,
+        "selection_rate": 0.1899887398914935
+      },
+      "medias_simples_entre_grupos": {
+        "accuracy": 0.8707061480225622,
+        "recall": 0.5551823813186829,
+        "fpr": 0.05692782489030295,
+        "selection_rate": 0.16147416889728503
+      }
+    },
+    "race": {
+      "atributo": "race",
+      "total_registros": 9769,
+      "qtd_grupos": 5,
+      "equal_opportunity_difference": 0.32195121951219513,
+      "equal_opportunity_escopo": "integral_todos_os_grupos",
+      "equalized_odds_difference": 0.32195121951219513,
+      "equalized_odds_escopo": "integral_todos_os_grupos",
+      "avaliacao_fairness_parcial": false,
+      "accuracy_diff": 0.08169129175413892,
+      "recall_diff": 0.32195121951219513,
+      "fpr_diff": 0.08838848845162309,
+      "selection_rate_diff": 0.18585878885316184,
+      "accuracy_ratio": 0.9100373487849756,
+      "recall_ratio": 0.4823529411764706,
+      "fpr_ratio": 0.11995809324253537,
+      "selection_rate_ratio": 0.21889076576576577,
+      "possui_denominadores_zero": false,
+      "grupos_recall_indefinido": [],
+      "grupos_fpr_indefinido": [],
+      "grupos_excluidos_equalized_odds": [],
+      "grupos_amostra_pequena": [
+        "Amer-Indian-Eskimo",
+        "Other"
+      ],
+      "nota_denominadores_zero": "Todos os grupos possuem positivos e negativos reais > 0 (comparacao integral).",
+      "metricas_globais": {
+        "accuracy": 0.8523902139420616,
+        "recall": 0.5885372112917023,
+        "fpr": 0.06459426725878079,
+        "selection_rate": 0.1899887398914935
+      },
+      "medias_simples_entre_grupos": {
+        "accuracy": 0.8733014842562007,
+        "recall": 0.45707837974160503,
+        "fpr": 0.04659590704232,
+        "selection_rate": 0.1270762620215308
+      }
+    }
+  },
+  "reconciliacao": {
+    "total_checagens": 16,
+    "total_aprovadas": 16,
+    "total_reprovadas": 0,
+    "total_nao_aplicaveis": 0,
+    "aprovado_geral": true
+  }
+}
